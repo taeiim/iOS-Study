@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		329B305324926D6C00CC7C9D /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 329B305224926D6C00CC7C9D /* LoginViewController.swift */; };
 		32E13C21248E607A00CD52FE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32E13C20248E607A00CD52FE /* AppDelegate.swift */; };
 		32E13C23248E607A00CD52FE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32E13C22248E607A00CD52FE /* SceneDelegate.swift */; };
 		32E13C25248E607A00CD52FE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32E13C24248E607A00CD52FE /* ViewController.swift */; };
@@ -16,6 +17,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		329B305224926D6C00CC7C9D /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		32E13C1D248E607A00CD52FE /* AutoLayoutPractice.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AutoLayoutPractice.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		32E13C20248E607A00CD52FE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		32E13C22248E607A00CD52FE /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -63,6 +65,7 @@
 				32E13C29248E607E00CD52FE /* Assets.xcassets */,
 				32E13C2B248E607E00CD52FE /* LaunchScreen.storyboard */,
 				32E13C2E248E607E00CD52FE /* Info.plist */,
+				329B305224926D6C00CC7C9D /* LoginViewController.swift */,
 			);
 			path = AutoLayoutPractice;
 			sourceTree = "<group>";
@@ -138,6 +141,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				329B305324926D6C00CC7C9D /* LoginViewController.swift in Sources */,
 				32E13C25248E607A00CD52FE /* ViewController.swift in Sources */,
 				32E13C21248E607A00CD52FE /* AppDelegate.swift in Sources */,
 				32E13C23248E607A00CD52FE /* SceneDelegate.swift in Sources */,
