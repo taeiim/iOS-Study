@@ -15,6 +15,9 @@
 		3228935024A61FA400B78E15 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3228934E24A61FA400B78E15 /* LaunchScreen.storyboard */; };
 		3228935924A6226500B78E15 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 3228935824A6226500B78E15 /* Kingfisher */; };
 		3228935C24A6227900B78E15 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 3228935B24A6227900B78E15 /* Alamofire */; };
+		3228935E24A6253400B78E15 /* CitizenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3228935D24A6253400B78E15 /* CitizenViewController.swift */; };
+		3228936024A62CB100B78E15 /* CitizenTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3228935F24A62CB100B78E15 /* CitizenTableViewCell.swift */; };
+		3228936224A62DD600B78E15 /* CitizenModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3228936124A62DD600B78E15 /* CitizenModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +29,9 @@
 		3228934C24A61FA400B78E15 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3228934F24A61FA400B78E15 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3228935124A61FA400B78E15 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3228935D24A6253400B78E15 /* CitizenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CitizenViewController.swift; sourceTree = "<group>"; };
+		3228935F24A62CB100B78E15 /* CitizenTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CitizenTableViewCell.swift; sourceTree = "<group>"; };
+		3228936124A62DD600B78E15 /* CitizenModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CitizenModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,6 +73,9 @@
 				3228934C24A61FA400B78E15 /* Assets.xcassets */,
 				3228934E24A61FA400B78E15 /* LaunchScreen.storyboard */,
 				3228935124A61FA400B78E15 /* Info.plist */,
+				3228935D24A6253400B78E15 /* CitizenViewController.swift */,
+				3228935F24A62CB100B78E15 /* CitizenTableViewCell.swift */,
+				3228936124A62DD600B78E15 /* CitizenModel.swift */,
 			);
 			path = TableViewPracticeAlone;
 			sourceTree = "<group>";
@@ -152,7 +161,10 @@
 			files = (
 				3228934824A61FA000B78E15 /* ViewController.swift in Sources */,
 				3228934424A61FA000B78E15 /* AppDelegate.swift in Sources */,
+				3228936224A62DD600B78E15 /* CitizenModel.swift in Sources */,
 				3228934624A61FA000B78E15 /* SceneDelegate.swift in Sources */,
+				3228936024A62CB100B78E15 /* CitizenTableViewCell.swift in Sources */,
+				3228935E24A6253400B78E15 /* CitizenViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
