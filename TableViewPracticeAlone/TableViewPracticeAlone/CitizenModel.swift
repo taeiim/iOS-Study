@@ -9,11 +9,17 @@
 import Foundation
 
 struct CitizenModel: Codable {
-    let items: [data]
+    let data: Data
+    let status: Int
+    let message: String
 }
 
-struct data: Codable {
+struct Data: Codable {
+    let citizens: [Citizen]
+}
+
+struct Citizen: Codable {
     let name : String
-    let catchphrase : String
+    let catchphrase : String?
     let imageUrl : String
 }

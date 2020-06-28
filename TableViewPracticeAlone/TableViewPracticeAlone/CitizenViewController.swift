@@ -12,7 +12,8 @@ import Kingfisher
 
 class CitizenViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
-    var citizens : [data] = []
+    @IBOutlet weak var tableView: UITableView!
+    var citizens : [Citizen] = []
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         citizens.count
@@ -24,11 +25,11 @@ class CitizenViewController: UIViewController, UITableViewDelegate, UITableViewD
         cell.citizenNameLabel.text = citizen.name
         cell.citizenDescLabel.text = citizen.catchphrase
         
+        let url = URL(string: citizen.imageUrl)
+        cell.citizenImageView.kf.setImage(with: url)
+        
         return cell
     }
-    
-
-    @IBOutlet weak var tableView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -41,8 +42,7 @@ class CitizenViewController: UIViewController, UITableViewDelegate, UITableViewD
         AF.request(baseURL+"/citizens").responseJSON(completionHandler: { response in
             guard let data = response.data else {return}
             let citizenModel = try? JSONDecoder().decode(CitizenModel.self, from: data)
-            self.citizens = citizenModel?.items ?? []
-            print(self.citizens)
+            self.citizens = citizenModel?.data.citizens ?? []
             self.tableView.reloadData()
         })
     }
