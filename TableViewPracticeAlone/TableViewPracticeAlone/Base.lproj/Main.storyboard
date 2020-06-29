@@ -23,17 +23,28 @@
                                 </constraints>
                                 <state key="normal" backgroundImage="tortoise" catalog="system"/>
                                 <connections>
-                                    <segue destination="fZi-tP-0dF" kind="presentation" id="Zgp-3B-YKV"/>
+                                    <action selector="buttonAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="bcS-Pd-kki"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZRT-rr-pyb">
+                                <rect key="frame" x="131" y="560" width="152" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="ZRT-rr-pyb" secondAttribute="bottom" constant="100" id="Cfv-Tk-5wu"/>
+                            <constraint firstItem="ZRT-rr-pyb" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="P0p-GE-Bi6"/>
                             <constraint firstItem="f9w-wp-gjB" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="vLW-h8-rou"/>
                             <constraint firstItem="f9w-wp-gjB" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="200" id="x0l-YW-pRC"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="nameLabel" destination="ZRT-rr-pyb" id="5ep-Zu-Lm6"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -42,13 +53,13 @@
         <!--Citizen View Controller-->
         <scene sceneID="S1w-8M-e3K">
             <objects>
-                <viewController id="fZi-tP-0dF" customClass="CitizenViewController" customModule="TableViewPracticeAlone" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="CitizenViewController" id="fZi-tP-0dF" customClass="CitizenViewController" customModule="TableViewPracticeAlone" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="edl-Wh-Onc">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="zAX-ub-3jS">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="CitizenTableViewCell" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="CitizenTableViewCell" id="wV0-21-tUa" customClass="CitizenTableViewCell" customModule="TableViewPracticeAlone" customModuleProvider="target">
@@ -58,12 +69,6 @@
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="70.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="좋아요" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1bD-g4-9QE">
-                                                    <rect key="frame" x="362.5" y="27" width="36.5" height="17"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                    <color key="textColor" systemColor="linkColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pTL-vH-Sch">
                                                     <rect key="frame" x="77" y="38.5" width="37.5" height="18"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
@@ -83,16 +88,28 @@
                                                         <constraint firstAttribute="width" constant="50" id="vll-Yk-uWh"/>
                                                     </constraints>
                                                 </imageView>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="trailing" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ilJ-ao-vq8">
+                                                    <rect key="frame" x="349" y="10.5" width="50" height="50"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="50" id="CW2-RV-qqm"/>
+                                                        <constraint firstAttribute="height" constant="50" id="Tz8-hz-jLn"/>
+                                                    </constraints>
+                                                    <state key="normal" title="Button" image="heart" catalog="system"/>
+                                                    <state key="selected" image="heart.fill" catalog="system"/>
+                                                    <connections>
+                                                        <action selector="buttonClicked:" destination="wV0-21-tUa" eventType="touchUpInside" id="iyQ-sU-7v5"/>
+                                                    </connections>
+                                                </button>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="6aA-ih-NTK" firstAttribute="top" secondItem="MLY-zS-cSp" secondAttribute="top" constant="10" id="05N-D6-TQ0"/>
                                                 <constraint firstItem="JaB-df-uwF" firstAttribute="leading" secondItem="6aA-ih-NTK" secondAttribute="trailing" constant="12" id="0qp-17-SMP"/>
+                                                <constraint firstAttribute="trailing" secondItem="ilJ-ao-vq8" secondAttribute="trailing" constant="15" id="53O-df-n4R"/>
                                                 <constraint firstItem="JaB-df-uwF" firstAttribute="top" secondItem="MLY-zS-cSp" secondAttribute="top" constant="10" id="5jq-uq-aYs"/>
-                                                <constraint firstItem="1bD-g4-9QE" firstAttribute="centerY" secondItem="MLY-zS-cSp" secondAttribute="centerY" id="BCy-1N-3AY"/>
                                                 <constraint firstItem="pTL-vH-Sch" firstAttribute="leading" secondItem="6aA-ih-NTK" secondAttribute="trailing" constant="12" id="FZd-xe-c8b"/>
                                                 <constraint firstItem="pTL-vH-Sch" firstAttribute="top" secondItem="JaB-df-uwF" secondAttribute="bottom" constant="8" id="Q7L-Pp-lGV"/>
                                                 <constraint firstItem="6aA-ih-NTK" firstAttribute="leading" secondItem="MLY-zS-cSp" secondAttribute="leading" constant="15" id="Ro0-lc-qF5"/>
-                                                <constraint firstAttribute="trailing" secondItem="1bD-g4-9QE" secondAttribute="trailing" constant="15" id="UUj-Mw-lyh"/>
+                                                <constraint firstItem="ilJ-ao-vq8" firstAttribute="centerY" secondItem="MLY-zS-cSp" secondAttribute="centerY" id="Zq9-Zz-Vzd"/>
                                                 <constraint firstAttribute="bottom" secondItem="6aA-ih-NTK" secondAttribute="bottom" constant="10" id="bYV-Re-Ffo"/>
                                             </constraints>
                                         </tableViewCellContentView>
@@ -100,7 +117,7 @@
                                             <outlet property="citizenDescLabel" destination="pTL-vH-Sch" id="E09-Vo-j0y"/>
                                             <outlet property="citizenImageView" destination="6aA-ih-NTK" id="vZN-9L-R9T"/>
                                             <outlet property="citizenNameLabel" destination="JaB-df-uwF" id="tu8-L9-9iQ"/>
-                                            <outlet property="likeBtn" destination="1bD-g4-9QE" id="FTi-eb-Ade"/>
+                                            <outlet property="likeBtn" destination="ilJ-ao-vq8" id="v1v-wa-ZwC"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -129,6 +146,8 @@
         </scene>
     </scenes>
     <resources>
+        <image name="heart" catalog="system" width="128" height="109"/>
+        <image name="heart.fill" catalog="system" width="128" height="109"/>
         <image name="tortoise" catalog="system" width="128" height="68"/>
     </resources>
 </document>

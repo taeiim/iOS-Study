@@ -10,32 +10,24 @@ import UIKit
 import Alamofire
 import Kingfisher
 
-class CitizenViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+protocol CitizenDelegate: class {
+    func buttonClicked(name: String)
+}
+
+class CitizenViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
     var citizens : [Citizen] = []
-    
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        citizens.count
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "CitizenTableViewCell", for: indexPath) as? CitizenTableViewCell else {return.init()}
-        let citizen = citizens[indexPath.row]
-        cell.citizenNameLabel.text = citizen.name
-        cell.citizenDescLabel.text = citizen.catchphrase
-        
-        let url = URL(string: citizen.imageUrl)
-        cell.citizenImageView.kf.setImage(with: url)
-        
-        return cell
-    }
+    weak var delegate: CitizenDelegate?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         getCitizenData()
     }
     
+}
+
+extension CitizenViewController {
     private func getCitizenData() {
         let baseURL = "https://moti.company/api/v2"
         
@@ -46,5 +38,32 @@ class CitizenViewController: UIViewController, UITableViewDelegate, UITableViewD
             self.tableView.reloadData()
         })
     }
+}
+
+
+extension CitizenViewController: CitizenTableViewDelegate {
+    func buttonClicked(cell: CitizenTableViewCell) {
+        let indexPath = tableView.indexPath(for: cell)
+        let name = citizens[indexPath!.row].name
+        
+        delegate?.buttonClicked(name: name)
+//        dismiss(animated: true, completion: nil)
+    }
     
+}
+
+extension CitizenViewController: UITableViewDelegate, UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+          citizens.count
+      }
+      
+      func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+          guard let cell = tableView.dequeueReusableCell(withIdentifier: "CitizenTableViewCell", for: indexPath) as? CitizenTableViewCell else {return.init()}
+          let citizen = citizens[indexPath.row]
+          
+          cell.delegate = self
+          cell.setData(data: citizen)
+          
+          return cell
+      }
 }
